@@ -1,0 +1,46 @@
+# This has to be uncommented unless you are adding to the internal git repo
+# internal
+# ros2 colcon
+install/
+log/
+build/
+# python
+*.pcd
+*.pyc
+# local
+experiments/
+*.iml
+*.swp
+.project
+.pydevproject
+.DS_Store
+.idea
+# colcon/CMake output
+build
+install
+log
+.trunk
+Tools
+.ipynb_checkpoints
+.ipy*
+#other repos
+rosbag*
+ROS_DOMAIN_ID.txt
+.vscode
+.vscode-server/src/ros2_numpy/
+DATASET/pose_images/
+DATASET/pose_data/
+DATASET/motion_data
+src/pymoveit2/
+input/20250611video.mp4
+models/params/final_training_metrics_posenorm.json
+DATASET/
+models/
+pose_detection/video_data/
+pose_detection/video_image/
+pose_detection/single_image
+pymoveit2/
+*_data.json
+*.png_display.png
+*prediction.json
+input/

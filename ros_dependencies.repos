@@ -1,0 +1,13 @@
+repositories:
+  gazebo_ros2_control:
+    type: git
+    url: https://github.com/ros-controls/gazebo_ros2_control.git
+    version: humble
+  usb_cam:
+    type: git
+    url: https://github.com/ros-drivers/usb_cam.git
+    version: main 
+  pymoveit2:
+    type: git
+    url: https://github.com/AndrejOrsula/pymoveit2.git
+    version: main
