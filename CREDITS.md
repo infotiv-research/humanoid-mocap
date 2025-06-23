@@ -1,8 +1,8 @@
 # Credits
 - This project is licensed under Apache-2.0, see below for the license. 
 - The modification of [Human-Gazebo](https://github.com/robotology/human-gazebo) in [/src/humanoid_robot/model/human-gazebo](/src/humanoid_robot/model/human-gazebo) is licensed under LGPL-2.1.
-- [Moveit2](https://github.com/moveit/moveit2) is licensed under  BSD-3-Clause license 
-
+- [Moveit2](https://github.com/moveit/moveit2) is licensed under  BSD-3-Clause license.
+- Many parts of this project is taken from [SIMLAN, Simulation for Indoor Multi-Camera Localization and Navigation](https://github.com/infotiv-research/SIMLAN/) project.
 - To improve collaboration in development environment we use vscode and docker as explained in [this instruction](https://www.allisonthackston.com/articles/docker-development.html) using these [docker files](https://github.com/athackst/dockerfiles). For production environment follow installation procedure used in [.devcontainer/Dockerfile](.devcontainer/Dockerfile) to install dependencies.
 - The Docker setup is added by Christoffer Johanesson (Dyno Robotics), based on Dyno experience working with Docker.
 

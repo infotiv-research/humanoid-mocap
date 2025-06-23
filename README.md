@@ -1,6 +1,6 @@
 # Humanoid Motion Capture
 
-This project develops a system for translating human pose detection to humanoid robot motion in simulation environments. Using Google MediaPipe for pose landmark detection from camera input, the system maps detected human poses to corresponding joint movements executed by a humanoid robot in Gazebo simulator. The implementation leverages ROS2 Humble and MoveIt2 for motion planning and control, with a data generation pipeline that creates training pairs of pose landmarks and robot joint configurations. This approach provides a foundation for safety monitoring applications in industrial simulation (SIMLAN), where human pose analysis can be integrated for workplace incident detection. (Tove Casparsson and Siyu Yi, June 2025)
+This project develops a system for translating human pose detection to humanoid robot motion in simulation environments. Using Google MediaPipe for pose landmark detection from camera input, the system maps detected human poses to corresponding joint movements executed by a humanoid robot in Gazebo simulator. The implementation leverages ROS2 Humble and MoveIt2 for motion planning and control, with a data generation pipeline that creates training pairs of pose landmarks and robot joint configurations. This approach provides a foundation for safety monitoring applications in industrial simulation (SIMLAN), where human pose analysis can be integrated for workplace incident detection. (Tove Casparsson and Siyu Yi, Supervisor: Hamid Ebadi, June 2025)
 
 ![Pose translation](resources/pose_translation.jpg)
 
@@ -13,6 +13,7 @@ Make sure the `Dev containers` extension is installed. Reopen the project in VS 
 Once VS Code is connected to Docker (as shown in the image below), open the terminal and run the following commands:
 
 ![dev container in vscode](resources/vscode.png)
+
 (if you don't see this try to build manually in vscode by pressing `Ctrl + Shift + P` and select `Dev containers: Rebuild and Reopen in container`.
 )
 
