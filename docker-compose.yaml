@@ -26,14 +26,14 @@ services:
     restart: always
     runtime: nvidia
 
-  # humanoid_simulation_nvidia:
-  #   <<: *research-base
-  #   container_name: humanoid_simulation_nvidia
-  #   runtime: nvidia
-  #   deploy:
-  #     resources:
-  #       reservations:
-  #         devices:
-  #           - driver: nvidia
-  #             count: "all"
-  #             capabilities: [compute,utility,graphics,display]
+  humanoid_simulation_nvidia:
+    <<: *research-base
+    container_name: humanoid_simulation_nvidia
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: "all"
+              capabilities: [compute,utility,graphics,display]

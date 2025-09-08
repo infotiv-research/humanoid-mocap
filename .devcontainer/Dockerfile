@@ -80,6 +80,11 @@ RUN cd /opt && git clone https://github.com/dfeneyrou/palanteer && \
     make -j$(nproc) && \
     make install
 
+# venv, eog to open the image files and extra utils
+RUN apt-get update && \
+    apt-get install -y python3.10-venv eog && \
+    rm -rf /var/lib/apt/lists/*
+
 # Install PIP requirements
 COPY requirements.txt /tmp/
 RUN python3 -m pip install -r /tmp/requirements.txt
@@ -110,6 +115,16 @@ RUN . /opt/ros/humble/setup.sh && colcon build --merge-install --cmake-args -DCM
 
 WORKDIR /home/ros/src/
 
+# pymoveit2 installation
+RUN git clone https://github.com/AndrejOrsula/pymoveit2.git
+RUN rosdep update
+RUN rosdep install -y -r -i --rosdistro ${ROS_DISTRO} --from-paths .
+#RUN colcon build --merge-install --symlink-install --cmake-args "-DCMAKE_BUILD_TYPE=Release"
+
+
+RUN mkdir -p /usr/local/lib/python3.10/dist-packages/mediapipe/modules/pose_landmark
+RUN chmod 777 /usr/local/lib/python3.10/dist-packages/mediapipe/modules/pose_landmark
+
 
 RUN echo "if [ -f /home/ros/install/setup.bash ]; then source /home/ros/install/setup.bash; fi" >> /home/ros/.bashrc
 RUN echo "if [ -f /usr/share/gazebo/setup.sh ]; then . /usr/share/gazebo/setup.sh; fi" >> /home/ros/.bashrc
@@ -121,14 +136,6 @@ COPY . /home/ros/src/
 RUN chown -R ros:ros  /home/ros/src/
 RUN usermod -aG video ros
 
-
-# ONLY IF pymoveit2 pip installation doesn't work try these commands to install it manually
-
-# git clone https://github.com/AndrejOrsula/pymoveit2.git
-# rosdep install -y -r -i --rosdistro ${ROS_DISTRO} --from-paths .
-
-RUN mkdir -p /usr/local/lib/python3.10/dist-packages/mediapipe/modules/pose_landmark
-RUN chmod 777 /usr/local/lib/python3.10/dist-packages/mediapipe/modules/pose_landmark
 
 USER ros
 

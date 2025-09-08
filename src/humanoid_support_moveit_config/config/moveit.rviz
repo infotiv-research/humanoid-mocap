@@ -2,7 +2,13 @@ Panels:
   - Class: rviz_common/Displays
     Help Height: 70
     Name: Displays
-    Tree Height: 415
+    Property Tree Widget:
+      Expanded:
+        - /Image1
+        - /Image1/Status1
+        - /Image1/Topic1
+      Splitter Ratio: 0.5
+    Tree Height: 288
   - Class: rviz_common/Help
     Name: Help
   - Class: rviz_common/Views
@@ -35,6 +41,237 @@ Visualization Manager:
       Color Enabled: false
       Enabled: true
       Interrupt Display: false
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Head_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftFoot:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LeftFoot_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftFoot_f2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LeftForeArm_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftHand:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LeftHand_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftLowerLeg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LeftLowerLeg_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LeftShoulder_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftShoulder_f2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftToe:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LeftUpperArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LeftUpperLeg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LeftUpperLeg_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LeftUpperLeg_f2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        Link Tree Style: Links in Alphabetic Order
+        LowerTrunk:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LowerTrunk_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        Neck:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Neck_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        Neck_f2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        Pelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightFoot:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightFoot_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RightFoot_f2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RightForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightForeArm_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RightHand:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightHand_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RightLowerLeg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightLowerLeg_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RightShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightShoulder_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RightShoulder_f2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RightToe:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightUpperArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightUpperLeg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        RightUpperLeg_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RightUpperLeg_f2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        UpperTrunk:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        UpperTrunk_f1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        UpperTrunk_f2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        link4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Loop Animation: true
       Name: Trajectory
       Robot Alpha: 0.5
@@ -63,9 +300,254 @@ Visualization Manager:
         Voxel Rendering: Occupied Voxels
       Scene Robot:
         Attached Body Color: 150; 50; 150
+        Links:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Head:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          Head_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftFoot:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LeftFoot_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftFoot_f2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftForeArm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LeftForeArm_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftHand:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LeftHand_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftLowerLeg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LeftLowerLeg_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftShoulder:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LeftShoulder_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftShoulder_f2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftToe:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LeftUpperArm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LeftUpperLeg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LeftUpperLeg_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          LeftUpperLeg_f2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          Link Tree Style: Links in Alphabetic Order
+          LowerTrunk:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          LowerTrunk_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          Neck:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          Neck_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          Neck_f2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          Pelvis:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightFoot:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightFoot_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          RightFoot_f2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          RightForeArm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightForeArm_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          RightHand:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightHand_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          RightLowerLeg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightLowerLeg_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          RightShoulder:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightShoulder_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          RightShoulder_f2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          RightToe:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightUpperArm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightUpperLeg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          RightUpperLeg_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          RightUpperLeg_f2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          UpperTrunk:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          UpperTrunk_f1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          UpperTrunk_f2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          arm_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          link1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          link2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          link3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          link4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          world:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
         Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /camera/image_raw
       Value: true
   Enabled: true
   Global Options:
@@ -103,11 +585,9 @@ Visualization Manager:
       Pitch: 0.5
       Target Frame: world
       Value: Orbit (rviz_default_plugins)
-      Yaw: -0.6230000257492065
+      Yaw: 5.66018533706665
     Saved: ~
 Window Geometry:
-  " - Trajectory Slider":
-    collapsed: false
   Displays:
     collapsed: false
   Height: 975
@@ -115,9 +595,13 @@ Window Geometry:
     collapsed: false
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002b400000379fc0200000006fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb000000100044006900730070006c006100790073010000003b00000220000000c700fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670000000165000001930000000000000000fb0000000800480065006c0070000000029a0000006e0000006e00fffffffb0000000a00560069006500770073010000026100000153000000a000fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000003f00ffffff000001f60000037900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Image:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000100000000000002b400000379fc0200000008fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb000000100044006900730070006c006100790073010000003b000001a1000000c700fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670000000165000001930000000000000000fb0000000800480065006c0070000000029a0000006e0000006e00fffffffb0000000a0056006900650077007301000001e200000103000000a000fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000003f00fffffffb0000000a0049006d00610067006501000002eb000000c90000002800ffffff000001f60000037900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Trajectory - Trajectory Slider:
+    collapsed: false
   Views:
     collapsed: false
   Width: 1200
-  X: 1177
-  Y: 275
+  X: 3232
+  Y: 648

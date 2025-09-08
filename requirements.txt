@@ -3,5 +3,5 @@ ros2_numpy
 mediapipe
 transforms3d
 torch
-scikit-learn
 tqdm
+pandas

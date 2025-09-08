@@ -18,13 +18,21 @@ os.makedirs(os.environ['MEDIAPIPE_MODEL_PATH'], exist_ok=True)
 class PoseDetector(Node):
     def __init__(self):
         super().__init__('pose_detector')
-        
-        self.declare_parameter('pose_dir', 'DATASET/pose_data')  
-        self.declare_parameter('image_dir', 'DATASET/pose_images')
+
+        self.declare_parameter('output_dir', 'DATASET')
+        self.output_dir = self.get_parameter('output_dir').get_parameter_value().string_value
+
+
+        self.declare_parameter('pose_dir', self.output_dir + '/pose_data')
+        self.declare_parameter('image_dir', self.output_dir + '/pose_images')
         
         self.pose_dir = self.get_parameter('pose_dir').value
         self.image_dir = self.get_parameter('image_dir').value
-        
+
+        os.makedirs(self.pose_dir, exist_ok=True)
+        os.makedirs(self.image_dir, exist_ok=True)
+        self.get_logger().info(f"Pose directory: {self.pose_dir} and image directory: {self.image_dir}")
+
         self.current_motion_id = None
         self.should_capture = False
         
@@ -33,10 +41,10 @@ class PoseDetector(Node):
         self.mp_drawing = mp.solutions.drawing_utils
         
         self.pose = self.mp_pose.Pose(
-            static_image_mode=False,
+            static_image_mode=False, # TODO: Hamid, Only those that you can detect by looking at the image and not the stream
             model_complexity=2,
-            min_detection_confidence=0.01,
-            min_tracking_confidence=0.01
+            min_detection_confidence=0.9, # higher confidence
+            min_tracking_confidence=0.8
         )
         
         self.latest_image = None
@@ -45,7 +53,7 @@ class PoseDetector(Node):
             Image,
             '/camera/image_raw',   
             self.store_image,
-            10
+            1 # only the most recent image
         )
         
         # Service for synchronization with motion planner
@@ -73,6 +81,7 @@ class PoseDetector(Node):
         if self.results.pose_landmarks:
             self.save_pose_data(self.results.pose_landmarks, motion_id)
             # processed_image: without landmarks, display_image: with landmark
+            # HERE: TODO: comment for training data only
             self.save_pose_image(self.display_image, self.processed_image, motion_id)
             response.pose_data_capture = True
         else:
@@ -81,11 +90,11 @@ class PoseDetector(Node):
               
     def process_latest_image(self, save = True):
             # Process latest image and pass it to MediaPipe, display the image if the pose data should be saved
-
             if self.latest_image is None:
                 print("latest_image IS NONE")
                 return
-            print ("Processing")
+            else: 
+                print ("Camera Processing")
             # Process every image from the camera
             cv_image = self.bridge.imgmsg_to_cv2(self.latest_image, "bgr8")
             if not save:
@@ -93,32 +102,30 @@ class PoseDetector(Node):
             else:
                 self.processed_image = cv_image
                 self.results = self.pose.process(cv2.cvtColor(self.processed_image, cv2.COLOR_BGR2RGB))
+                drawing_spec = self.mp_drawing.DrawingSpec(color=(0, 0, 255), thickness=1, circle_radius=2)
                 # If pose landmarks are detected, display image
                 if self.results.pose_landmarks:
                     self.display_image = self.processed_image.copy()
                     self.mp_drawing.draw_landmarks(
-                        self.display_image,
-                        self.results.pose_landmarks,
-                        self.mp_pose.POSE_CONNECTIONS
+                        image=self.display_image,
+                        landmark_list=self.results.pose_landmarks,
+                        connections=self.mp_pose.POSE_CONNECTIONS,
+                        landmark_drawing_spec=drawing_spec,
                     )
                     cv2.imshow("Camera View", self.display_image)
                     cv2.waitKey(1)
     
     def save_pose_image(self, display_image, original_image, motionid):
-        
         display_filename = f"{motionid}_display.jpg"
         display_path = os.path.join(self.image_dir, display_filename)
         cv2.imwrite(display_path, display_image)
-        
         original_filename = f"{motionid}_original.jpg"
         original_path = os.path.join(self.image_dir, original_filename)
         cv2.imwrite(original_path, original_image)
-        
         self.get_logger().info(f'Saved pose images to {self.image_dir}')
 
     def save_pose_data(self, pose_landmarks, motionid):
         # Save pose data as JSON file
-
         landmarks_data = []
         # Add the data for each detected landmark to landmarks_data
         for idx, landmark in enumerate(pose_landmarks.landmark):
@@ -130,7 +137,7 @@ class PoseDetector(Node):
                 'visibility': landmark.visibility
             })
         
-        json_filename = f"{motionid}_data.json"
+        json_filename = f"{motionid}_pose.json"
         json_path = os.path.join(self.pose_dir, json_filename)
         
         with open(json_path, 'w') as f:

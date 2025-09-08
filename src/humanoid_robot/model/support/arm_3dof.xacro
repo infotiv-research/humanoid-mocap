@@ -15,25 +15,25 @@
     <xacro:property name="twist_arm_length" value="${1-(revolute_arm_length*2)}"/>
 
     <link name="arm_base_link">
-        <!-- <visual>
+        <visual>
             <geometry>
                 <box size="${arm_base_length} ${arm_base_width} ${arm_base_height}"/>
             </geometry>
             <origin xyz="0.0 0.0 ${arm_base_height/2}" rpy="0.0 0.0 0.0"/>
-            <material name="orange"/>
+            <material name="black"/>
         </visual>
         <collision>
             <geometry>
                 <box size="${arm_base_length} ${arm_base_width} ${arm_base_height}"/>
             </geometry>
             <origin xyz="0.0 0.0 ${arm_base_height/2}" rpy="0.0 0.0 0.0"/>
-        </collision> -->
+        </collision>
         <xacro:box_inertia m="0.5" l="${arm_base_length}" w="${arm_base_width}" h="${arm_base_height}"
                            xyz="0.0 0.0 ${arm_base_height/2.0}" rpy="0.0 0.0 0.0" />
     </link>
 
     <link name="link1">
-        <!-- <visual>
+        <visual>
             <geometry>
                 <cylinder radius="${arm_radius}" length="${link1_length}"/>
             </geometry>
@@ -45,13 +45,13 @@
                 <cylinder radius="${arm_radius}" length="${link1_length}"/>
             </geometry>
             <origin xyz="0.0 0.0 ${link1_length/2}" rpy="0.0 0.0 0.0"/>
-        </collision> -->
+        </collision>
         <xacro:cylinder_inertia m="0.3" r="${arm_radius}" h="${link1_length}"
                                 xyz="0.0 0.0 ${link1_length/2}" rpy="0.0 0.0 0.0" />
     </link>
 
     <link name="link2">
-        <!-- <visual> 
+        <visual> 
             <geometry>
                 <cylinder radius="${arm_radius}" length="${revolute_arm_length}"/>
             </geometry>
@@ -63,43 +63,43 @@
                 <cylinder radius="${arm_radius}" length="${revolute_arm_length}"/>
             </geometry>
             <origin xyz="0.0 0.0 ${revolute_arm_length/2}" rpy="0.0 0.0 0.0"/>
-        </collision> -->
+        </collision>
         <xacro:cylinder_inertia m="0.3" r="${arm_radius}" h="${revolute_arm_length}"
                                 xyz="0.0 0.0 ${revolute_arm_length/2}" rpy="0.0 0.0 0.0" />
     </link>
 
     <link name="link3">
-        <!-- <visual>
+        <visual>
             <geometry>
                 <cylinder radius="${arm_radius}" length="${revolute_arm_length}"/>
             </geometry>
             <origin xyz="0.0 0.0 ${revolute_arm_length/2}" rpy="0.0 0.0 0.0"/>
-            <material name="yellow"/>
+            <material name="red"/>
         </visual>
         <collision>
             <geometry>
                 <cylinder radius="${arm_radius}" length="${revolute_arm_length}"/>
             </geometry>
             <origin xyz="0.0 0.0 ${revolute_arm_length/2}" rpy="0.0 0.0 0.0"/>
-        </collision> -->
+        </collision>
         <xacro:cylinder_inertia m="0.3" r="${arm_radius}" h="${revolute_arm_length}"
                                 xyz="0.0 0.0 ${revolute_arm_length/2}" rpy="0.0 0.0 0.0" />
     </link>
 
     <link name="link4">
-        <!-- <visual>
+        <visual>
             <geometry>
                 <cylinder radius="${arm_radius}" length="${twist_arm_length}"/>
             </geometry>
             <origin xyz="0.0 0.0 ${twist_arm_length/2}" rpy="0.0 0.0 0.0"/>
-            <material name="orange"/>
+            <material name="blue"/>
         </visual>
         <collision>
             <geometry>
                 <cylinder radius="${arm_radius}" length="${twist_arm_length}"/>
             </geometry>
             <origin xyz="0.0 0.0 ${twist_arm_length/2}" rpy="0.0 0.0 0.0"/>
-        </collision> -->
+        </collision>
         <xacro:cylinder_inertia m="0.3" r="${arm_radius}" h="${twist_arm_length}"
                                 xyz="0.0 0.0 ${twist_arm_length/2}" rpy="0.0 0.0 0.0" />
     </link>
@@ -129,7 +129,7 @@
         <!-- <dynamics damping="1.0" friction="1.0"/> -->
     </joint>
 
-    <joint name="link3_link4_joint" type="continuous">
+    <joint name="link3_link4_joint" type="revolute">
         <parent link="link3"/>
         <child link="link4"/>
         <axis xyz="0 0 1"/>
